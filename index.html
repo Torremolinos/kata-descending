@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descending Order</title>
+</head>
+<body>
+
+<script>
+function descendingOrder() {
+  // Use prompt to get a number from the user
+  const inputNumber = prompt("Enter a non-negative integer:");
+
+  // Convert the input to a number
+  const num = parseInt(inputNumber);
+
+  if (!isNaN(num) && num >= 0) {
+    // Convert the number to an array of digits
+    const digits = Array.from(String(num), Number);
+
+    // Sort the array of digits in descending order
+    digits.sort((a, b) => b - a);
+
+    // Convert the sorted array of digits back to a number
+    const result = parseInt(digits.join(''));
+
+    // Display the result
+    alert(`The number with its digits in descending order: ${result}`);
+  } else {
+    // Handle invalid input
+    alert("Invalid input. Please enter a non-negative integer.");
+  }
+}
+  
+// Call the function when the page loads
+descendingOrder();
+</script>
+
+</body>
+</html>
